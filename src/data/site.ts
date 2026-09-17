@@ -17,6 +17,7 @@ export const navLinks = [
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/packages', label: 'Packages' },
+  { to: '/reviews', label: 'Reviews' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -108,15 +109,36 @@ const productFolders = [
   { slug: 'cosmetics', title: 'Cosmetics', cover: '/images/service-photography.jpg' },
 ]
 
+const logoImages = [
+  '/images/dummy-logo-1.png',
+  '/images/dummy-logo-2.png',
+  '/images/dummy-logo-3.png',
+  '/images/dummy-logo-4.png',
+  '/images/dummy-logo-perfume.png',
+  '/images/dummy-logo-cream.png',
+  '/images/dummy-logo-jewelry.png',
+  '/images/dummy-logo-skincare.png',
+  '/images/dummy-logo-cosmetics.png',
+  '/images/dummy-logos-grid.png',
+]
+
 export const portfolioCategories = [
   {
     slug: 'branding',
     title: 'Logo & Branding',
-    cover: '/images/brand-guide.png',
-    folders: productFolders.map((folder) => ({
-      ...folder,
-      images: gallery(folder.cover, brandingShots),
-    })),
+    cover: '/images/dummy-logos-grid.png',
+    folders: [
+      {
+        slug: 'logos',
+        title: 'Logos',
+        cover: '/images/dummy-logos-grid.png',
+        images: logoImages,
+      },
+      ...productFolders.map((folder) => ({
+        ...folder,
+        images: gallery(folder.cover, brandingShots),
+      })),
+    ],
   },
   {
     slug: 'photography',
@@ -147,3 +169,18 @@ export function getPortfolioFolder(categorySlug: string, folderSlug: string) {
   const folder = category?.folders.find((item) => item.slug === folderSlug)
   return category && folder ? { category, folder } : undefined
 }
+
+export const reviewImages = [
+  '/images/reviews/review-01.jpg',
+  '/images/reviews/review-02.jpg',
+  '/images/reviews/review-03.jpg',
+  '/images/reviews/review-04.jpg',
+  '/images/reviews/review-05.jpg',
+  '/images/reviews/review-06.jpg',
+  '/images/reviews/review-07.jpg',
+  '/images/reviews/review-08.jpg',
+  '/images/reviews/review-09.jpg',
+  '/images/reviews/review-10.jpg',
+  '/images/reviews/review-11.jpg',
+  '/images/reviews/review-12.jpg',
+]

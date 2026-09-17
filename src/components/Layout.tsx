@@ -14,10 +14,39 @@ function ScrollToTop() {
   return null
 }
 
+function HideNetlifyBadge() {
+  useEffect(() => {
+    const hide = () => {
+      document.querySelectorAll('a, button, div, span, iframe').forEach((el) => {
+        const text = el.textContent?.toLowerCase() ?? ''
+        const href = el instanceof HTMLAnchorElement ? el.href : ''
+        if (text.includes('powered by netlify') && text.replace(/\s+/g, ' ').trim().length < 40) {
+          ;(el as HTMLElement).style.setProperty('display', 'none', 'important')
+        }
+        if (href.includes('www.netlify.com') || href.includes('netlify.com/?utm')) {
+          ;(el as HTMLElement).style.setProperty('display', 'none', 'important')
+        }
+      })
+    }
+
+    hide()
+    const timer = window.setInterval(hide, 1000)
+    const observer = new MutationObserver(hide)
+    observer.observe(document.body, { childList: true, subtree: true })
+    return () => {
+      window.clearInterval(timer)
+      observer.disconnect()
+    }
+  }, [])
+
+  return null
+}
+
 export function Layout() {
   return (
     <div className="page-bg min-h-screen">
       <ScrollToTop />
+      <HideNetlifyBadge />
       <Navbar />
       <main>
         <Outlet />

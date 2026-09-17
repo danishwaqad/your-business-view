@@ -42,3 +42,15 @@ body {
     0 18px 40px rgba(17, 17, 17, 0.08),
     0 2px 0 rgba(255, 255, 255, 0.7) inset;
 }
+
+iframe[src*="netlify"],
+a[href*="netlify.com"],
+a[aria-label*="Netlify" i],
+div[id*="netlify" i],
+[class*="netlify-badge" i],
+[class*="nf-toast" i] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}

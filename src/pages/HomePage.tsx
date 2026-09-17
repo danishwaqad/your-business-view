@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Camera, Clapperboard, Megaphone } from 'lucide-react'
 import { packages, services, site } from '../data/site'
 import { SectionHeading } from '../components/SectionHeading'
+import { ReviewsSection } from '../components/ReviewsSection'
 
 export function HomePage() {
   return (
@@ -39,8 +40,8 @@ export function HomePage() {
         <div className="relative mx-auto w-full max-w-md">
           <div className="absolute -inset-4 rounded-[2.4rem] bg-green/20 blur-2xl" />
           <div className="card-shadow relative overflow-hidden rounded-[2.2rem] border border-olive/20 bg-paper">
-            <img src="/images/profile.jpg" alt="Founder of Your Business View" className="h-[28rem] w-full object-cover object-[center_18%]" />
-            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/80 to-transparent p-6 text-paper">
+            <img src="/images/profile.jpg" alt="Founder of Your Business View" className="h-[28rem] w-full object-cover object-[center_22%]" />
+            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/70 via-ink/20 to-transparent px-6 pt-16 pb-5 text-paper">
               <p className="font-display text-2xl tracking-wide uppercase">Your Business View</p>
               <p className="text-sm text-green">Digital Marketing · Multan</p>
             </div>
@@ -110,9 +111,11 @@ export function HomePage() {
         </div>
       </section>
 
+      <ReviewsSection preview />
+
       <section className="px-5 py-16">
         <div className="card-shadow mx-auto max-w-6xl overflow-hidden rounded-[2.2rem] border border-olive/20 bg-paper md:grid md:grid-cols-2">
-          <img src="/images/profile.jpg" alt="" className="h-full max-h-[420px] w-full object-cover object-[center_18%]" />
+          <img src="/images/profile.jpg" alt="" className="h-full max-h-[420px] w-full object-cover object-[center_22%]" />
           <div className="p-8 md:p-12">
             <p className="text-sm tracking-[0.28em] text-olive uppercase">Based in Multan</p>
             <h2 className="font-display mt-2 text-4xl tracking-wide text-green uppercase">Let’s grow your brand</h2>

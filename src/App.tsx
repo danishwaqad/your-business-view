@@ -6,6 +6,7 @@ import { PortfolioPage } from './pages/PortfolioPage'
 import { PortfolioCategoryPage } from './pages/PortfolioCategoryPage'
 import { PortfolioFolderPage } from './pages/PortfolioFolderPage'
 import { PackagesPage } from './pages/PackagesPage'
+import { ReviewsPage } from './pages/ReviewsPage'
 import { ContactPage } from './pages/ContactPage'
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: '/portfolio/:categorySlug', element: <PortfolioCategoryPage /> },
       { path: '/portfolio/:categorySlug/:folderSlug', element: <PortfolioFolderPage /> },
       { path: '/packages', element: <PackagesPage /> },
+      { path: '/reviews', element: <ReviewsPage /> },
       { path: '/contact', element: <ContactPage /> },
     ],
   },

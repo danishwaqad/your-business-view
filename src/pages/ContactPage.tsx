@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { MapPin, Phone } from 'lucide-react'
 import { site } from '../data/site'
 import { SectionHeading } from '../components/SectionHeading'
-import { FacebookIcon, InstagramIcon } from '../components/SocialIcons'
+import { FacebookIcon, InstagramIcon, TikTokIcon } from '../components/SocialIcons'
 
 export function ContactPage() {
   const [name, setName] = useState('')
@@ -29,7 +29,7 @@ export function ContactPage() {
           <img
             src="/images/profile.jpg"
             alt="Your Business View"
-            className="mb-5 h-52 w-full rounded-[1.4rem] object-cover object-[center_8%]"
+            className="mb-5 h-64 w-full rounded-[1.4rem] object-cover object-[center_22%]"
           />
           <h3 className="font-display text-3xl tracking-wide uppercase">{site.name}</h3>
           <p className="mt-1 text-sm tracking-[0.2em] text-green uppercase">{site.tagline}</p>
@@ -42,18 +42,6 @@ export function ContactPage() {
               <MapPin className="h-5 w-5 text-green" />
               <span>{site.address}</span>
             </p>
-            <p>
-              Instagram:{' '}
-              <a className="text-green" href={site.instagram} target="_blank" rel="noreferrer">
-                {site.instagramHandle}
-              </a>
-            </p>
-            <p>
-              TikTok:{' '}
-              <a className="text-green" href={site.tiktok} target="_blank" rel="noreferrer">
-                {site.tiktokHandle}
-              </a>
-            </p>
           </div>
           <div className="mt-6 flex gap-3">
             <a className="rounded-full bg-ink p-3 text-paper hover:bg-green" href={site.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
@@ -61,6 +49,9 @@ export function ContactPage() {
             </a>
             <a className="rounded-full bg-ink p-3 text-paper hover:bg-green" href={site.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
               <FacebookIcon />
+            </a>
+            <a className="rounded-full bg-ink p-3 text-paper hover:bg-green" href={site.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+              <TikTokIcon />
             </a>
           </div>
         </div>
