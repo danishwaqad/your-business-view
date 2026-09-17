@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Camera, Clapperboard, Megaphone } from 'lucide-react'
 import { packages, services, site } from '../data/site'
 import { SectionHeading } from '../components/SectionHeading'
-import { ReviewsSection } from '../components/ReviewsSection'
 
 export function HomePage() {
   return (
@@ -110,8 +109,6 @@ export function HomePage() {
           ))}
         </div>
       </section>
-
-      <ReviewsSection preview />
 
       <section className="px-5 py-16">
         <div className="card-shadow mx-auto max-w-6xl overflow-hidden rounded-[2.2rem] border border-olive/20 bg-paper md:grid md:grid-cols-2">
