@@ -34,12 +34,12 @@ export const services = [
     summary: 'Clean studio photoshoots that make every product look premium.',
     image: '/images/service-photography.jpg',
   },
-  {
-    slug: 'digital-marketing',
-    title: 'Digital Marketing Services',
-    summary: 'Full-funnel content and campaigns that grow your brand online.',
-    image: '/images/service-ads.jpg',
-  },
+  // {
+  //   slug: 'digital-marketing',
+  //   title: 'Digital Marketing Services',
+  //   summary: 'Full-funnel content and campaigns that grow your brand online.',
+  //   image: '/images/service-ads.jpg',
+  // },
   {
     slug: 'logo-design',
     title: 'Logo Design',

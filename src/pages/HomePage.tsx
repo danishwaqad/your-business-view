@@ -53,7 +53,7 @@ export function HomePage() {
         {[
           { icon: Camera, label: 'Product Photoshoots' },
           { icon: Clapperboard, label: 'Video Reels' },
-          { icon: Megaphone, label: 'Ads & Branding' },
+          { icon: Megaphone, label: 'Logos & Branding' },
         ].map((item) => (
           <div key={item.label} className="flex items-center gap-3 rounded-2xl border border-olive/20 bg-paper px-5 py-4">
             <item.icon className="h-5 w-5 text-green" />
@@ -111,7 +111,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <ReviewsSection preview />
+      {/* <ReviewsSection preview />
 
       <section className="px-5 py-16">
         <div className="card-shadow mx-auto max-w-6xl overflow-hidden rounded-[2.2rem] border border-olive/20 bg-paper md:grid md:grid-cols-2">
@@ -128,7 +128,7 @@ export function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
