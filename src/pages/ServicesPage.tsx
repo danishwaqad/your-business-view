@@ -22,7 +22,7 @@ export function ServicesPage() {
               <h3 className="font-display text-4xl tracking-wide text-green uppercase">{service.title}</h3>
               <p className="mt-4 text-muted">{service.summary}</p>
               <a
-                href={site.whatsapp}
+                href={`${site.whatsapp}?text=${encodeURIComponent(`Hello Your Business View, I want to book ${service.title}.`)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-6 inline-flex w-fit rounded-full bg-green px-5 py-2.5 font-semibold text-white hover:bg-green-dark"

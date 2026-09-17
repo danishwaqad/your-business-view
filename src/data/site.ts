@@ -94,35 +94,56 @@ export const priceList = [
   { name: 'Monthly Package', price: '20,000 RS' },
 ]
 
-export const portfolio = [
+const gallery = (cover: string, extras: string[]) => [cover, ...extras]
+
+const brandingShots = ['/images/brand-guide.png', '/images/service-design.jpg', '/images/service-posters.jpg', '/images/service-ads.jpg']
+const photoShots = ['/images/service-photography.jpg', '/images/folder-perfume.jpg', '/images/folder-cream.jpg', '/images/folder-jewelry.jpg']
+const videoShots = ['/images/service-video.jpg', '/images/service-photography.jpg', '/images/folder-perfume.jpg', '/images/service-ads.jpg']
+
+const productFolders = [
+  { slug: 'perfume', title: 'Perfume', cover: '/images/folder-perfume.jpg' },
+  { slug: 'cream', title: 'Cream', cover: '/images/folder-cream.jpg' },
+  { slug: 'skincare', title: 'Skincare', cover: '/images/folder-cream.jpg' },
+  { slug: 'jewelry', title: 'Jewelry', cover: '/images/folder-jewelry.jpg' },
+  { slug: 'cosmetics', title: 'Cosmetics', cover: '/images/service-photography.jpg' },
+]
+
+export const portfolioCategories = [
   {
-    title: 'Premium Package Poster',
-    category: 'Poster Design',
-    image: '/images/premium-package.png',
+    slug: 'branding',
+    title: 'Logo & Branding',
+    cover: '/images/brand-guide.png',
+    folders: productFolders.map((folder) => ({
+      ...folder,
+      images: gallery(folder.cover, brandingShots),
+    })),
   },
   {
-    title: 'Basic Package Poster',
-    category: 'Poster Design',
-    image: '/images/basic-package.png',
-  },
-  {
-    title: 'Price List Layout',
-    category: 'Branding',
-    image: '/images/price-list.png',
-  },
-  {
-    title: 'Brand Identity Board',
-    category: 'Logo & Branding',
-    image: '/images/brand-guide.png',
-  },
-  {
+    slug: 'photography',
     title: 'Product Photography',
-    category: 'Photography',
-    image: '/images/service-photography.jpg',
+    cover: '/images/service-photography.jpg',
+    folders: productFolders.map((folder) => ({
+      ...folder,
+      images: gallery(folder.cover, photoShots),
+    })),
   },
   {
+    slug: 'video',
     title: 'Product Video Reels',
-    category: 'Video Editing',
-    image: '/images/service-video.jpg',
+    cover: '/images/service-video.jpg',
+    folders: productFolders.map((folder) => ({
+      ...folder,
+      images: gallery(folder.cover, videoShots),
+    })),
   },
 ]
+
+export function getPortfolioCategory(slug: string) {
+  return portfolioCategories.find((category) => category.slug === slug)
+}
+
+export function getPortfolioFolder(categorySlug: string, folderSlug: string) {
+  const category = getPortfolioCategory(categorySlug)
+  const folder = category?.folders.find((item) => item.slug === folderSlug)
+  return category && folder ? { category, folder } : undefined
+}

@@ -26,7 +26,11 @@ export function ContactPage() {
 
       <div className="mx-auto mt-12 grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="card-shadow rounded-[2rem] border border-olive/20 bg-paper p-8">
-          <img src="/images/profile.jpg" alt="Your Business View" className="mb-6 aspect-[4/5] w-full rounded-[1.4rem] object-cover object-[center_18%]" />
+          <img
+            src="/images/profile.jpg"
+            alt="Your Business View"
+            className="mb-5 h-52 w-full rounded-[1.4rem] object-cover object-[center_8%]"
+          />
           <h3 className="font-display text-3xl tracking-wide uppercase">{site.name}</h3>
           <p className="mt-1 text-sm tracking-[0.2em] text-green uppercase">{site.tagline}</p>
           <div className="mt-6 space-y-3 text-muted">
