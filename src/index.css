@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+  --color-cream: #f3eee6;
+  --color-paper: #fbf8f2;
+  --color-olive: #8a9848;
+  --color-green: #00c853;
+  --color-green-dark: #00a844;
+  --color-ink: #111111;
+  --color-muted: #5c574e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-bg {
+  background-color: #f3eee6;
+  background-image:
+    radial-gradient(ellipse 70% 45% at 12% 8%, rgba(255, 255, 255, 0.7), transparent 58%),
+    radial-gradient(ellipse 55% 40% at 88% 0%, rgba(255, 255, 255, 0.55), transparent 52%),
+    linear-gradient(90deg, transparent 12%, rgba(138, 152, 72, 0.06) 18%, transparent 24%),
+    linear-gradient(90deg, transparent 72%, rgba(17, 17, 17, 0.035) 80%, transparent 88%);
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 10px rgba(0, 200, 83, 0.55)) drop-shadow(0 0 22px rgba(0, 200, 83, 0.28));
+}
+
+.card-shadow {
+  box-shadow:
+    0 18px 40px rgba(17, 17, 17, 0.08),
+    0 2px 0 rgba(255, 255, 255, 0.7) inset;
+}
